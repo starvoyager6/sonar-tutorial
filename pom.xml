@@ -35,6 +35,10 @@
 
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
+        <sonar.coverage.jacoco.xmlReportPaths>
+            target/site/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+
     </properties>
 
     <dependencies>
@@ -73,21 +77,6 @@
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Runs SonarQube analysis automatically when mvn package or mvn install is called -->
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>${sonar.maven.version}</version>
-                <executions>
-                    <execution>
-                        <id>sonar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>sonar</goal>
                         </goals>
                     </execution>
                 </executions>
