@@ -43,4 +43,12 @@ class CustomFileReaderTest {
         sut.setNewSentence(betterSentence);
         assertEquals(betterSentence, sut.getNewSentence());
     }
+
+    @Test
+    void testEquals() {
+        CustomFileReader sut2 = new CustomFileReader("readMe1.txt");
+
+        assertEquals(sut, sut2);
+    }
+
 }

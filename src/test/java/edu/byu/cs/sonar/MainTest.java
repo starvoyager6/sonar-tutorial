@@ -14,4 +14,11 @@ class MainTest {
         assertDoesNotThrow(() -> Main.main(args));
 
     }
+
+    @Test
+    void testMainMissingFile() {
+        String[] args = {"missing.txt", "notreal.txt", "ghost.txt", "5"};
+
+        assertDoesNotThrow(() -> Main.main(args));
+    }
 }
